@@ -4,7 +4,7 @@
 
 int main()
 {
-	subFuncA_002_init();
+	subFuncA_init();
 	
 	int		input1 = 123;
 	char	_input2[100] = { 0 };
@@ -14,34 +14,34 @@ int main()
 	char	_input4[100] = { 0 };
 	char*	input4 = _input4;
 
-	subFuncA_002_return_value[0] = 97;
+	subFuncA_return_value[0] = 97;
 
-	subFuncA_002_subInput2_value_size[0] = 11;
+	subFuncA_subInput2_value_size[0] = 11;
 	for (int index = 0; index < 43; index++) {
 		_input2[index] = (index + 1);
 	}
-	subFuncA_002_subInput3_return_value_size[0] = 23;
+	subFuncA_subInput3_return_value_size[0] = 23;
 	for (int index = 0; index < 28; index++) {
-		subFuncA_002_subInput3_return_value[0][index] = (index + 1);
+		subFuncA_subInput3_return_value[0][index] = (index + 1);
 	}
-	subFuncA_002_subInput4_value_size[0] = 17;
+	subFuncA_subInput4_value_size[0] = 17;
 	for (int index = 0; index < 43; index++) {
 		_input4[index] = (index + 1);
 	}
-	subFuncA_002_subInput4_return_value_size[0] = 23;
+	subFuncA_subInput4_return_value_size[0] = 23;
 	for (int index = 0; index < 38; index++) {
-		subFuncA_002_subInput4_return_value[0][index] = (index * 10 + 1);
+		subFuncA_subInput4_return_value[0][index] = (index * 10 + 1);
 	}
 
-	int _ret_val = subFuncA_002(input1, input2, input3, input4);
+	int _ret_val = subFuncA(input1, input2, input3, input4);
 
 	_tprintf(_T("%32s = %d(0x%08x)\n"), _T("_ret_val"), _ret_val, _ret_val);
-	_tprintf(_T("%32s = %d(0x%08x)\n"), _T("subFuncA_002_called_count"), subFuncA_002_called_count, subFuncA_002_called_count);
-	_tprintf(_T("%32s = %d(0x%08x)\n"), _T("subFuncA_002_subInput1"), (int)subFuncA_002_subInput1, (int)subFuncA_002_subInput1);
-	_tprintf(_T("%32s = %d(0x%08x)\n"), _T("subFuncA_002_subInput1[0]"), subFuncA_002_subInput1[0], subFuncA_002_subInput1[0]);
-	_tprintf(_T("%32s :\n\t\t\t"), _T("subFuncA_002_subInput2_value[0]"));
+	_tprintf(_T("%32s = %d(0x%08x)\n"), _T("subFuncA_called_count"), subFuncA_called_count, subFuncA_called_count);
+	_tprintf(_T("%32s = %d(0x%08x)\n"), _T("subFuncA_subInput1"), (int)subFuncA_subInput1, (int)subFuncA_subInput1);
+	_tprintf(_T("%32s = %d(0x%08x)\n"), _T("subFuncA_subInput1[0]"), subFuncA_subInput1[0], subFuncA_subInput1[0]);
+	_tprintf(_T("%32s :\n\t\t\t"), _T("subFuncA_subInput2_value[0]"));
 	for (int index = 0; index < 100; index++) {
-		_tprintf(_T("0x%02x"), subFuncA_002_subInput2_value[0][index]);
+		_tprintf(_T("0x%02x"), subFuncA_subInput2_value[0][index]);
 		if ((0 != index) && (0 == (index + 1) % 16)) {
 			_tprintf(_T("\n\t\t\t"));
 		}
@@ -61,9 +61,9 @@ int main()
 		}
 	}
 	_tprintf(_T("\n"));
-	_tprintf(_T("%32s :\n\t\t\t"), _T("subFuncA_002_subInput4_value[0]"));
+	_tprintf(_T("%32s :\n\t\t\t"), _T("subFuncA_subInput4_value[0]"));
 	for (int index = 0; index < 100; index++) {
-		_tprintf(_T("0x%02x"), subFuncA_002_subInput4_value[0][index]);
+		_tprintf(_T("0x%02x"), subFuncA_subInput4_value[0][index]);
 		if ((0 != index) && (0 == (index + 1) % 16)) {
 			_tprintf(_T("\n\t\t\t"));
 		}
