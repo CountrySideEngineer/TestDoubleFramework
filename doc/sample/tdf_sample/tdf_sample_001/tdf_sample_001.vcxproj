@@ -144,11 +144,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="tdf_sample_001.cpp" />
+    <ClCompile Include="tdf_sample_002.cpp" />
     <ClCompile Include="tdf_sample_test_double_001.cpp" />
+    <ClCompile Include="tdf_sample_test_double_002.cpp" />
     <ClCompile Include="test_driver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tdf_sample_test_double_001.h" />
+    <ClInclude Include="tdf_sample_test_double_002.h" />
     <ClInclude Include="test_driver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
