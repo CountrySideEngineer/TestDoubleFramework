@@ -146,21 +146,26 @@
     <ClCompile Include="tdf_sample_001.cpp" />
     <ClCompile Include="tdf_sample_002.cpp" />
     <ClCompile Include="tdf_sample_003.cpp" />
+    <ClCompile Include="tdf_sample_004.cpp" />
     <ClCompile Include="tdf_sample_test_double_001.cpp" />
     <ClCompile Include="tdf_sample_test_double_002.cpp" />
     <ClCompile Include="tdf_sample_test_double_003.cpp" />
+    <ClCompile Include="tdf_sample_test_double_004.cpp" />
     <ClCompile Include="test_driver_001.cpp" />
     <ClCompile Include="test_driver_002.cpp" />
     <ClCompile Include="test_driver_003.cpp" />
+    <ClCompile Include="test_driver_004.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tdf_sample_test_double_001.h" />
     <ClInclude Include="tdf_sample_test_double_002.h" />
     <ClInclude Include="tdf_sample_test_double_003.h" />
+    <ClInclude Include="tdf_sample_test_double_004.h" />
     <ClInclude Include="test_driver.h" />
     <ClInclude Include="test_driver_001.h" />
     <ClInclude Include="test_driver_002.h" />
     <ClInclude Include="test_driver_003.h" />
+    <ClInclude Include="test_driver_004.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
