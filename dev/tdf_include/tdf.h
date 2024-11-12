@@ -836,3 +836,33 @@
 	DEC_FUNC_INIT(FUNC_NAME)
 
 #define END_DECLARE_TD(FUNC_NAME)
+
+#define	EXPAND(x)	x
+
+#define PP_NARG_MINUS2(...)			EXPAND(PP_NARG_MINUS2_(__VA_ARGS__, PP_RSEQ_N_MINUS2()))
+
+#define PP_NARG_MINUS2_(...)		EXPAND(PP_ARG_MINUS2_N(__VA_ARGS__))
+
+#define PP_ARG_MINUS2_N(returnVal,  _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, N, ...)   N
+
+#define PP_RSEQ_N_MINUS2()   10,10,9,9,8,8,7,7,6,6,5,5,4,4,3,2,2,1,1,0,0
+
+#define PP_NARG_MINUS1(...)			EXPAND(PP_NARG_MINUS1_(__VA_ARGS__, PP_RSEQ_N_MINUS1()))
+
+#define PP_NARG_MINUS1_(...)		EXPAND(PP_ARG_MINUS1_N(__VA_ARGS__))
+
+#define PP_ARG_MINUS1_N( _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, N, ...)   N
+
+#define PP_RSEQ_N_MINUS1()   10,10,9,9,8,8,7,7,6,6,5,5,4,4,3,2,2,1,1,0,0
+
+#define DEF_VOID_FUNC(...)			EXPAND(DEF_VOID_FUNC_(PP_NARG_MINUS1(__VA_ARGS__), __VA_ARGS__))
+
+#define DEF_VOID_FUNC_(N,...)		EXPAND(DEF_VOID_FUNC_N(N,__VA_ARGS__))
+
+#define DEF_VOID_FUNC_N(N,...)		EXPAND(DEFINE_VOID_FUNC_ ## N(__VA_ARGS__))
+
+#define DEF_VALUE_FUNC(...)			EXPAND(DEF_VALUE_FUNC_(PP_NARG_MINUS2(__VA_ARGS__), __VA_ARGS__))
+
+#define DEF_VALUE_FUNC_(N,...)		EXPAND(DEF_VALUE_FUNC_N(N,__VA_ARGS__))
+
+#define DEF_VALUE_FUNC_N(N,...)		EXPAND(DEFINE_VAL_FUNC_ ## N(__VA_ARGS__))
