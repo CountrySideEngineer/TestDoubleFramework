@@ -191,13 +191,13 @@
 	void FUNC_NAME##_val_init() {	\
 		for (int index1 = 0; index1 < TD_BUFF_SIZE_1; index1++) {		\
 			for (int index2 = 0; index2 < TD_BUFF_SIZE_2; index2++) {	\
-				FUNC_NAME##_return_val[index1][index2] = INIT_VAL;		\
+				FUNC_NAME##_return_value[index1][index2] = INIT_VAL;		\
 			}															\
 			FUNC_NAME##_return_value_size[index1] = 0;					\
 		}																\
 	}																	\
 
-#define DEFINE_FUNC_RET_PTR_INIT(FUNC_TYPE, FUNC_NAME, INIT_VAL)	\
+#define DEFINE_FUNC_RET_PTR_INIT(FUNC_TYPE, FUNC_NAME)	\
 	DEFINE_FUNC_RET_PTR_INIT_BY_VAL(FUNC_TYPE, FUNC_NAME, 0)
 
 #define TYPEDEF_ARG_HANDLER(FUNC_NAME, ARG_TYPE, ARG_NAME)	\
@@ -459,6 +459,21 @@
 		FUNC_NAME##_##ARG6_NAME##_init();					\
 	}														\
 
+#define DEFINE_RET_PTR_FUNC_INIT_0(FUNC_TYPE, FUNC_NAME)	\
+	void FUNC_NAME##_init()									\
+	{														\
+		FUNC_NAME##_called_count = 0;						\
+		FUNC_NAME##_val_init();								\
+	}														\
+
+#define DEFINE_RET_PTR_FUNC_INIT_1(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME)	\
+	void FUNC_NAME##_init()									\
+	{														\
+		FUNC_NAME##_called_count = 0;						\
+		FUNC_NAME##_val_init();								\
+		FUNC_NAME##_##ARG0_NAME##_init();					\
+	}														\
+
 #define DEFINE_VOID_FUNC_BODY_0(FUNC_NAME)	\
 	void FUNC_NAME() {						\
 		FUNC_NAME##_called_count++;			\
@@ -653,6 +668,21 @@
 		return _return_latch;															\
 	}																					\
 
+#define DEFINE_RET_PTR_FUNC_BODY_0(FUNC_TYPE, FUNC_NAME)	\
+	FUNC_TYPE##* FUNC_NAME() {																	\
+		FUNC_TYPE##* _return_latch = &FUNC_NAME##_return_value[FUNC_NAME##_called_count][0];	\
+		FUNC_NAME##_called_count++;																\
+		return _return_latch;																	\
+	}																							\
+
+#define DEFINE_RET_PTR_FUNC_BODY_1(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME)	\
+	FUNC_TYPE##* FUNC_NAME() {																	\
+		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME);											\
+		FUNC_TYPE##* _return_latch = &FUNC_NAME##_return_value[FUNC_NAME##_called_count][0];	\
+		FUNC_NAME##_called_count++;																\
+		return _return_latch;																	\
+	}																							\
+
 #define BEGIN_DEFINE_TD(FUNC_NAME)	\
 	long	FUNC_NAME##_called_count = 0;
 
@@ -793,6 +823,13 @@
 	DEFINE_RET_VAL_FUNC_INIT_7(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME)	\
 	DEFINE_RET_VAL_FUNC_BODY_7(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME)	\
 
+#define DEFINE_PTR_FUNC_0(FUNC_TYPE, FUNC_NAME)	\
+	DEFINE_FUNC_RETURN_PTR_VAL_BUFF(FUNC_TYPE, FUNC_NAME)		\
+	DEFINE_FUNC_RETURN_PTR_VAL_SIZE_BUFF(FUNC_TYPE, FUNC_NAME)	\
+	DEFINE_FUNC_RET_PTR_INIT(FUNC_TYPE, FUNC_NAME)				\
+	DEFINE_RET_PTR_FUNC_INIT_0(FUNC_TYPE, FUNC_NAME)			\
+	DEFINE_RET_PTR_FUNC_BODY_0(FUNC_TYPE, FUNC_NAME)			\
+
 #define END_DEFINE_TD(FUNC_NAME)
 
 #define BEGIN_DECLARE_TD(FUNC_NAME)	\
@@ -866,3 +903,9 @@
 #define DEF_VALUE_FUNC_(N,...)		EXPAND(DEF_VALUE_FUNC_N(N,__VA_ARGS__))
 
 #define DEF_VALUE_FUNC_N(N,...)		EXPAND(DEFINE_VAL_FUNC_ ## N(__VA_ARGS__))
+
+#define DEF_PTR_FUNC(...)			EXPAND(DEF_PTR_FUNC_(PP_NARG_MINUS2(__VA_ARGS__), __VA_ARGS__))
+
+#define DEF_PTR_FUNC_(N,...)		EXPAND(DEF_PTR_FUNC_N(N,__VA_ARGS__))
+
+#define DEF_PTR_FUNC_N(N,...)		EXPAND(DEFINE_PTR_FUNC_ ## N(__VA_ARGS__))
