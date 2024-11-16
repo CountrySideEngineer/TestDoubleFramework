@@ -11,7 +11,7 @@ LONG	SampleFunc_001(SHORT input1, SHORT input2);
 
 VOID SampleFunc_001_test::SetUp()
 {
-	CALL_FUNC_INIT(SampleSubFunc_001_001)
+	TD_INIT(SampleSubFunc_001_001)
 }
 
 VOID SampleFunc_001_test::TearDown() { }

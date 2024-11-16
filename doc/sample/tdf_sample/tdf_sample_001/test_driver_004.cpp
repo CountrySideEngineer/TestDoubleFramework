@@ -10,7 +10,7 @@ VOID	SampleFunc_004(BYTE* input1, ULONG input2);
 
 VOID	SampleFunc_004_test::SetUp()
 {
-	CALL_FUNC_INIT(SampleSubFunc_004_001);
+	TD_INIT(SampleSubFunc_004_001);
 }
 VOID SampleFunc_004_test::TearDown() {}
 
