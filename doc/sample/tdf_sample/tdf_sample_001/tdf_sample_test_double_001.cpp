@@ -2,11 +2,6 @@
 #include <Windows.h>
 #include "tdf.h"
 
-BEGIN_DEF_TD(SampleSubFunc);
-REG_VAL_ARG(SampleSubFunc, SHORT, input1)
-DEF_VOID_FUNC(SampleSubFunc, SHORT, input1)
-END_DEF_TD(SampleSubFunc);
-
 BEGIN_DEF_TD(SampleSubFunc_001_001)
 REG_VAL_ARG(SampleSubFunc_001_001, SHORT, input1)
 REG_VAL_ARG(SampleSubFunc_001_001, SHORT, input2)
