@@ -1,3 +1,9 @@
+![](https://img.shields.io/badge/build-no_need-lightgray)
+![LISENCE](https://img.shields.io/badge/C--A8B9CC.svg?logo=C&style=social)
+![](https://img.shields.io/badge/googletest-%3Dv1.10-blue)
+![](https://img.shields.io/badge/-VisualStudio2022-007ACC.svg?logo=visualstudiocode&style=plastic)
+![](https://img.shields.io/badge/Win-Windows11-0078D6.svg?logo=windows&style=plastic)
+
 # Test Double Framework
 
 The **Test Double Framework** is a lightweight framework for defining and declaring test doubles used in C language unit testing.
