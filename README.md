@@ -227,4 +227,5 @@ LONG* SampleSubFunc()
 	return _return_latch; 
 }
 ```
-This English version preserves the structure and technical details of the original text. Let me know if any adjustments are needed!
+
+For more detailed information about macros and how to use them, please refer to the wiki.
