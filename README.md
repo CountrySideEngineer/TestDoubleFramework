@@ -235,3 +235,4 @@ LONG* SampleSubFunc()
 ```
 
 For more detailed information about macros and how to use them, please refer to the wiki.
+[Wiki of TestDoubleFramework](https://github.com/CountrySideEngineer/TestDoubleFramework/wiki/HOME)
