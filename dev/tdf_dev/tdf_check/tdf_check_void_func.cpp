@@ -11,7 +11,7 @@
  */
 BEGIN_DEF_TD(VoidFuncNoArg)
 DEF_VOID_FUNC(VoidFuncNoArg)
-END_DEC_TD(VoidFuncNoArg)
+END_DEF_TD(VoidFuncNoArg)
 
 void CheckVoidFuncNoArg(void)
 {
@@ -52,7 +52,7 @@ void CheckVoidFuncNoArg(void)
 BEGIN_DEF_TD(VoidFunc1ValArg)
 REG_VAL_ARG(VoidFunc1ValArg, int, input1)
 DEF_VOID_FUNC(VoidFunc1ValArg, int, input1)
-END_DEC_TD(VoidFunc1ValArg)
+END_DEF_TD(VoidFunc1ValArg)
 
 void CheckVoidFunc1ValArg(void)
 {
@@ -116,7 +116,7 @@ BEGIN_DEF_TD(VoidFunc2ValArg)
 REG_VAL_ARG(VoidFunc2ValArg, int, input1)
 REG_VAL_ARG(VoidFunc2ValArg, int, input2)
 DEF_VOID_FUNC(VoidFunc2ValArg, int, input1, int, input2)
-END_DEC_TD(VoidFunc2ValArg)
+END_DEF_TD(VoidFunc2ValArg)
 
 void CheckVoidFunc2ValArg(void)
 {
