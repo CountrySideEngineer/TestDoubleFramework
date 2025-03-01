@@ -1,0 +1,12 @@
+#pragma once
+
+#define GET_NAME(name)	\
+	_T(# name)
+
+#define CHECK_VALUE(name, actual, expect)		\
+	_tprintf(_T("%48s = %8d\t"), name, actual);	\
+	if (expect == actual) {						\
+		_tprintf(_T("OK!\n"));					\
+	} else {									\
+		_tprintf(_T("NG!\n"));					\
+	}											\

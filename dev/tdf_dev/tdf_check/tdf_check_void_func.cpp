@@ -1,37 +1,194 @@
 ﻿#include <iostream>
 #include <Windows.h>
 #include <tchar.h>
+#include "tdf_check.h"
 #include "tdf.h"
 
-#define GET_NAME(name)	\
-	_T(# name)
-
 /*
-	Define test double of "void FuncA(void)
+	Define test double of "void FuncA(void)"
 	using macros of test double framework defined in "tdf.h"
 	header file.
  */
-BEGIN_DEF_TD(FuncA)
-DEF_VOID_FUNC(FuncA)
-END_DEC_TD(FuncA)
+BEGIN_DEF_TD(VoidFuncNoArg)
+DEF_VOID_FUNC(VoidFuncNoArg)
+END_DEC_TD(VoidFuncNoArg)
 
 void CheckVoidFuncNoArg(void)
 {
-	TD_INIT(FuncA);
+	_tprintf(_T("%s Start!\n"), GET_NAME(CheckVoidFuncNoArg));
 
-	FuncA();
+	TD_INIT(VoidFuncNoArg);
 
-	_tprintf(_T("%s = %d\n"), GET_NAME(CALLED_COUNT(FuncA)), CALLED_COUNT(FuncA));
+	VoidFuncNoArg();
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFuncNoArg)),
+		CALLED_COUNT(VoidFuncNoArg),
+		1);
+
+	VoidFuncNoArg();
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFuncNoArg)),
+		CALLED_COUNT(VoidFuncNoArg),
+		2);
+
+	TD_INIT(VoidFuncNoArg);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFuncNoArg)),
+		CALLED_COUNT(VoidFuncNoArg),
+		0);
 }
 
+/*
+	Define test double of "void FuncA(int input1)"
+	using macros of test double framework defined in "tdf.h"
+	header file.
+ */
+BEGIN_DEF_TD(VoidFunc1ValArg)
+REG_VAL_ARG(VoidFunc1ValArg, int, input1)
+DEF_VOID_FUNC(VoidFunc1ValArg, int, input1)
+END_DEC_TD(VoidFunc1ValArg)
 
+void CheckVoidFunc1ValArg(void)
+{
+	_tprintf(_T("%s Start!\n"), GET_NAME(CheckVoidFunc1ValArg));
+
+	TD_INIT(VoidFunc1ValArg);
+
+	int input1 = 1;
+	VoidFunc1ValArg(input1);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc1ValArg)),
+		CALLED_COUNT(VoidFunc1ValArg),
+		1);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc1ValArg, input1, 0)),
+		ARG_VAL(VoidFunc1ValArg, input1, 0),
+		1);
+
+	input1 = 11;
+	VoidFunc1ValArg(input1);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc1ValArg)),
+		CALLED_COUNT(VoidFunc1ValArg),
+		2);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc1ValArg, input1, 1)),
+		ARG_VAL(VoidFunc1ValArg, input1, 1),
+		11);
+
+	TD_INIT(VoidFunc1ValArg);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc1ValArg)),
+		CALLED_COUNT(VoidFunc1ValArg),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc1ValArg, input1, 0)),
+		ARG_VAL(VoidFunc1ValArg, input1, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc1ValArg, input1, 1)),
+		ARG_VAL(VoidFunc1ValArg, input1, 1),
+		0);
+}
 
 /*
-	Check the test double defined by test double framework macros.
+	Define test double of "void FuncA(int input1, int input2)"
+	using macros of test double framework defined in "tdf.h"
+	header file.
  */
-int main()
-{
-	FuncA();
+BEGIN_DEF_TD(VoidFunc2ValArg)
+REG_VAL_ARG(VoidFunc2ValArg, int, input1)
+REG_VAL_ARG(VoidFunc2ValArg, int, input2)
+DEF_VOID_FUNC(VoidFunc2ValArg, int, input1, int, input2)
+END_DEC_TD(VoidFunc2ValArg)
 
-	_tprintf(_T("%s = %d\n"), GET_NAME(CALLED_COUNT(FuncA)), CALLED_COUNT(FuncA));
+void CheckVoidFunc2ValArg(void)
+{
+	_tprintf(_T("%s Start!\n"), GET_NAME(CheckVoidFunc2ValArg));
+
+	TD_INIT(VoidFunc2ValArg);
+
+	int input1 = 1;
+	int input2 = 2;
+	VoidFunc2ValArg(input1, input2);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc2ValArg)),
+		CALLED_COUNT(VoidFunc2ValArg),
+		1);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc2ValArg, input1, 0)),
+		ARG_VAL(VoidFunc2ValArg, input1, 0),
+		1);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc2ValArg, input2, 0)),
+		ARG_VAL(VoidFunc2ValArg, input2, 0),
+		2);
+
+	input1 = 11;
+	input2 = 22;
+	VoidFunc2ValArg(input1, input2);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc2ValArg)),
+		CALLED_COUNT(VoidFunc2ValArg),
+		2);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc2ValArg, input1, 1)),
+		ARG_VAL(VoidFunc2ValArg, input1, 1),
+		11);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc2ValArg, input2, 1)),
+		ARG_VAL(VoidFunc2ValArg, input2, 1),
+		22);
+
+	TD_INIT(VoidFunc2ValArg);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc2ValArg)),
+		CALLED_COUNT(VoidFunc2ValArg),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc2ValArg, input1, 0)),
+		ARG_VAL(VoidFunc2ValArg, input1, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc2ValArg, input2, 0)),
+		ARG_VAL(VoidFunc2ValArg, input2, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc2ValArg, input1, 1)),
+		ARG_VAL(VoidFunc2ValArg, input1, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc2ValArg, input2, 1)),
+		ARG_VAL(VoidFunc2ValArg, input2, 1),
+		0);
 }
