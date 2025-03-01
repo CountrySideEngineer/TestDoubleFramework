@@ -22,7 +22,7 @@
 	ARG_TYPE	FUNC_NAME##_##ARG_NAME##_return_value[TD_BUFF_SIZE_1][TD_BUFF_SIZE_2];
 
 #define DEFINE_PTR_ARG_RETURN_VAL_SIZE_BUFF(FUNC_NAME, ARG_TYPE, ARG_NAME)	\
-	ARG_TYPE	FUNC_NAME##_##ARG_NAME##_return_value_size[TD_BUFF_SIZE_1];
+	long	FUNC_NAME##_##ARG_NAME##_return_value_size[TD_BUFF_SIZE_1];
 
 #define DEFINE_FUNC_RETURN_VAL_BUFF(FUNC_TYPE, FUNC_NAME)	\
 	FUNC_TYPE	FUNC_NAME##_return_value[TD_BUFF_SIZE_1];
@@ -393,92 +393,92 @@
 #define DEFINE_VOID_FUNC_BODY_3(FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME)	\
 	void FUNC_NAME() {												\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG1_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG0_NAME);				\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME);				\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME);				\
 		FUNC_NAME##_called_count++;									\
 	}
 
 #define DEFINE_VOID_FUNC_BODY_4(FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME)	\
 	void FUNC_NAME() {												\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG1_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG0_NAME);				\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME);				\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME);				\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME);				\
 		FUNC_NAME##_called_count++;									\
 	}
 
 #define DEFINE_VOID_FUNC_BODY_5(FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME)	\
 	void FUNC_NAME() {												\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG1_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG4_NAME##_handler(ARG0_NAME);				\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME);				\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME);				\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME);				\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME);				\
 		FUNC_NAME##_called_count++;									\
 	}
 
 #define DEFINE_VOID_FUNC_BODY_6(FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME)	\
 	void FUNC_NAME() {												\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG1_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG4_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG5_NAME##_handler(ARG0_NAME);				\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME);				\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME);				\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME);				\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME);				\
+		FUNC_NAME##_##ARG5_NAME##_handler(ARG5_NAME);				\
 		FUNC_NAME##_called_count++;									\
 	}
 
 #define DEFINE_VOID_FUNC_BODY_7(FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME)	\
 	void FUNC_NAME() {												\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG1_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG4_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG5_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG6_NAME##_handler(ARG0_NAME);				\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME);				\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME);				\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME);				\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME);				\
+		FUNC_NAME##_##ARG5_NAME##_handler(ARG5_NAME);				\
+		FUNC_NAME##_##ARG6_NAME##_handler(ARG6_NAME);				\
 		FUNC_NAME##_called_count++;									\
 	}
 
 #define DEFINE_VOID_FUNC_BODY_8(FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME)	\
 	void FUNC_NAME() {												\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG1_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG4_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG5_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG6_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG7_NAME##_handler(ARG0_NAME);				\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME);				\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME);				\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME);				\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME);				\
+		FUNC_NAME##_##ARG5_NAME##_handler(ARG5_NAME);				\
+		FUNC_NAME##_##ARG6_NAME##_handler(ARG6_NAME);				\
+		FUNC_NAME##_##ARG7_NAME##_handler(ARG7_NAME);				\
 		FUNC_NAME##_called_count++;									\
 	}
 
 #define DEFINE_VOID_FUNC_BODY_9(FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME)	\
 	void FUNC_NAME() {												\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG1_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG4_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG5_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG6_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG7_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG8_NAME##_handler(ARG0_NAME);				\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME);				\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME);				\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME);				\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME);				\
+		FUNC_NAME##_##ARG5_NAME##_handler(ARG5_NAME);				\
+		FUNC_NAME##_##ARG6_NAME##_handler(ARG6_NAME);				\
+		FUNC_NAME##_##ARG7_NAME##_handler(ARG7_NAME);				\
+		FUNC_NAME##_##ARG8_NAME##_handler(ARG8_NAME);				\
 		FUNC_NAME##_called_count++;									\
 	}
 
 #define DEFINE_VOID_FUNC_BODY_10(FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME, ARG9_TYPE, ARG9_NAME)	\
 	void FUNC_NAME() {												\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG1_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG4_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG5_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG6_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG7_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG8_NAME##_handler(ARG0_NAME);				\
-		FUNC_NAME##_##ARG9_NAME##_handler(ARG0_NAME);				\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME);				\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME);				\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME);				\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME);				\
+		FUNC_NAME##_##ARG5_NAME##_handler(ARG5_NAME);				\
+		FUNC_NAME##_##ARG6_NAME##_handler(ARG6_NAME);				\
+		FUNC_NAME##_##ARG7_NAME##_handler(ARG7_NAME);				\
+		FUNC_NAME##_##ARG8_NAME##_handler(ARG8_NAME);				\
+		FUNC_NAME##_##ARG9_NAME##_handler(ARG9_NAME);				\
 		FUNC_NAME##_called_count++;									\
 	}
 
@@ -514,7 +514,7 @@
 		FUNC_NAME##_called_count++;														\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME)									\
 		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG1_NAME)									\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME)									\
 		FUNC_TYPE _return_latch = FUNC_NAME##_return_value[FUNC_NAME##_called_count];	\
 		FUNC_NAME##_called_count++;														\
 		return _return_latch;															\
@@ -525,8 +525,8 @@
 		FUNC_NAME##_called_count++;														\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME)									\
 		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG1_NAME)									\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME)									\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME)									\
 		FUNC_TYPE _return_latch = FUNC_NAME##_return_value[FUNC_NAME##_called_count];	\
 		FUNC_NAME##_called_count++;														\
 		return _return_latch;															\
@@ -537,9 +537,9 @@
 		FUNC_NAME##_called_count++;														\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME)									\
 		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG4_NAME##_handler(ARG1_NAME)									\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME)									\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME)									\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME)									\
 		FUNC_TYPE _return_latch = FUNC_NAME##_return_value[FUNC_NAME##_called_count];	\
 		FUNC_NAME##_called_count++;														\
 		return _return_latch;															\
@@ -550,10 +550,10 @@
 		FUNC_NAME##_called_count++;														\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME)									\
 		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG4_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG5_NAME##_handler(ARG1_NAME)									\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME)									\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME)									\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME)									\
+		FUNC_NAME##_##ARG5_NAME##_handler(ARG5_NAME)									\
 		FUNC_TYPE _return_latch = FUNC_NAME##_return_value[FUNC_NAME##_called_count];	\
 		FUNC_NAME##_called_count++;														\
 		return _return_latch;															\
@@ -564,11 +564,62 @@
 		FUNC_NAME##_called_count++;														\
 		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME)									\
 		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG2_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG3_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG4_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG5_NAME##_handler(ARG1_NAME)									\
-		FUNC_NAME##_##ARG6_NAME##_handler(ARG1_NAME)									\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME)									\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME)									\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME)									\
+		FUNC_NAME##_##ARG5_NAME##_handler(ARG5_NAME)									\
+		FUNC_NAME##_##ARG6_NAME##_handler(ARG6_NAME)									\
+		FUNC_TYPE _return_latch = FUNC_NAME##_return_value[FUNC_NAME##_called_count];	\
+		FUNC_NAME##_called_count++;														\
+		return _return_latch;															\
+	}
+
+#define DEFINE_RET_VAL_FUNC_BODY_8(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME)	\
+	FUNC_TYPE FUNC_NAME() {																\
+		FUNC_NAME##_called_count++;														\
+		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME)									\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME)									\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME)									\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME)									\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME)									\
+		FUNC_NAME##_##ARG5_NAME##_handler(ARG5_NAME)									\
+		FUNC_NAME##_##ARG6_NAME##_handler(ARG6_NAME)									\
+		FUNC_NAME##_##ARG7_NAME##_handler(ARG7_NAME)									\
+		FUNC_TYPE _return_latch = FUNC_NAME##_return_value[FUNC_NAME##_called_count];	\
+		FUNC_NAME##_called_count++;														\
+		return _return_latch;															\
+	}
+
+#define DEFINE_RET_VAL_FUNC_BODY_9(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME)	\
+	FUNC_TYPE FUNC_NAME() {																\
+		FUNC_NAME##_called_count++;														\
+		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME)									\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME)									\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME)									\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME)									\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME)									\
+		FUNC_NAME##_##ARG5_NAME##_handler(ARG5_NAME)									\
+		FUNC_NAME##_##ARG6_NAME##_handler(ARG6_NAME)									\
+		FUNC_NAME##_##ARG7_NAME##_handler(ARG7_NAME)									\
+		FUNC_NAME##_##ARG8_NAME##_handler(ARG8_NAME)									\
+		FUNC_TYPE _return_latch = FUNC_NAME##_return_value[FUNC_NAME##_called_count];	\
+		FUNC_NAME##_called_count++;														\
+		return _return_latch;															\
+	}
+
+#define DEFINE_RET_VAL_FUNC_BODY_10(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME, ARG9_TYPE, ARG9_NAME)	\
+	FUNC_TYPE FUNC_NAME() {																\
+		FUNC_NAME##_called_count++;														\
+		FUNC_NAME##_##ARG0_NAME##_handler(ARG0_NAME)									\
+		FUNC_NAME##_##ARG1_NAME##_handler(ARG1_NAME)									\
+		FUNC_NAME##_##ARG2_NAME##_handler(ARG2_NAME)									\
+		FUNC_NAME##_##ARG3_NAME##_handler(ARG3_NAME)									\
+		FUNC_NAME##_##ARG4_NAME##_handler(ARG4_NAME)									\
+		FUNC_NAME##_##ARG5_NAME##_handler(ARG5_NAME)									\
+		FUNC_NAME##_##ARG6_NAME##_handler(ARG6_NAME)									\
+		FUNC_NAME##_##ARG7_NAME##_handler(ARG7_NAME)									\
+		FUNC_NAME##_##ARG8_NAME##_handler(ARG8_NAME)									\
+		FUNC_NAME##_##ARG9_NAME##_handler(ARG9_NAME)									\
 		FUNC_TYPE _return_latch = FUNC_NAME##_return_value[FUNC_NAME##_called_count];	\
 		FUNC_NAME##_called_count++;														\
 		return _return_latch;															\
@@ -591,7 +642,6 @@
 	DEFINE_PTR_ARG_P1_IN_INIT(FUNC_NAME, ARG_TYPE, ARG_NAME)		\
 	DEFINE_PTR_ARG_P1_IN_HANDLE(FUNC_NAME, ARG_TYPE, ARG_NAME)		\
 	TYPEDEF_ARG_HANDLER(FUNC_NAME, ARG_TYPE##*, ARG_NAME)			\
-	DEFINE_ARG_HANDLER_TYPE(FUNC_NAME, ARG_TYPE##*, ARG_NAME)		\
 	DEFINE_ARG_HANDLER_SET(FUNC_NAME, ARG_TYPE, ARG_NAME)
 
 #define REG_PTR_ARG_P1_OUT(FUNC_NAME, ARG_TYPE, ARG_NAME)					\
@@ -601,7 +651,6 @@
 	DEFINE_PTR_ARG_P1_OUT_INIT(FUNC_NAME, ARG_TYPE, ARG_NAME)				\
 	DEFINE_PTR_ARG_P1_OUT_HANDLE(FUNC_NAME, ARG_TYPE, ARG_NAME)				\
 	TYPEDEF_ARG_HANDLER(FUNC_NAME, ARG_TYPE##*, ARG_NAME)					\
-	DEFINE_ARG_HANDLER_TYPE(FUNC_NAME, ARG_TYPE##*, ARG_NAME)				\
 	DEFINE_ARG_HANDLER_SET(FUNC_NAME, ARG_TYPE, ARG_NAME)
 
 #define REG_PTR_ARG_P1_IN_OUT(FUNC_NAME, ARG_TYPE, ARG_NAME)				\
@@ -613,7 +662,6 @@
 	DEFINE_PTR_ARG_P1_IN_OUT_INIT(FUNC_NAME, ARG_TYPE, ARG_NAME)			\
 	DEFINE_PTR_ARG_P1_IN_OUT_HANDLE(FUNC_NAME, ARG_TYPE, ARG_NAME)			\
 	TYPEDEF_ARG_HANDLER(FUNC_NAME, ARG_TYPE##*, ARG_NAME)					\
-	DEFINE_ARG_HANDLER_TYPE(FUNC_NAME, ARG_TYPE##*, ARG_NAME)				\
 	DEFINE_ARG_HANDLER_SET(FUNC_NAME, ARG_TYPE, ARG_NAME)
 
 #define REG_PTR_ARG_P2_OUT(FUNC_NAME, ARG_TYPE, ARG_NAME)					\
@@ -623,7 +671,6 @@
 	DEFINE_PTR_ARG_P2_OUT_INIT(FUNC_NAME, ARG_TYPE, ARG_NAME)				\
 	DEFINE_PTR_ARG_P2_OUT_HANDLE(FUNC_NAME, ARG_TYPE, ARG_NAME)				\
 	TYPEDEF_ARG_HANDLER(FUNC_NAME, ARG_TYPE##*, ARG_NAME)					\
-	DEFINE_ARG_HANDLER_TYPE(FUNC_NAME, ARG_TYPE##**, ARG_NAME)				\
 	DEFINE_ARG_HANDLER_SET(FUNC_NAME, ARG_TYPE, ARG_NAME)
 
 #define DEFINE_VOID_FUNC_0(FUNC_NAME)	\
@@ -717,6 +764,24 @@
 	DEFINE_FUNC_RET_VAL_INIT(FUNC_TYPE, FUNC_NAME)																																								\
 	DEFINE_RET_VAL_FUNC_INIT_7(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME)	\
 	DEFINE_RET_VAL_FUNC_BODY_7(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME)
+
+#define DEFINE_VAL_FUNC_8(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME)	\
+	DEFINE_FUNC_RETURN_VAL_BUFF(FUNC_TYPE, FUNC_NAME)																																													\
+	DEFINE_FUNC_RET_VAL_INIT(FUNC_TYPE, FUNC_NAME)																																														\
+	DEFINE_RET_VAL_FUNC_INIT_8(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME)	\
+	DEFINE_RET_VAL_FUNC_BODY_8(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME)
+
+#define DEFINE_VAL_FUNC_9(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME)	\
+	DEFINE_FUNC_RETURN_VAL_BUFF(FUNC_TYPE, FUNC_NAME)																																																		\
+	DEFINE_FUNC_RET_VAL_INIT(FUNC_TYPE, FUNC_NAME)																																																			\
+	DEFINE_RET_VAL_FUNC_INIT_9(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME)	\
+	DEFINE_RET_VAL_FUNC_BODY_9(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME)
+
+#define DEFINE_VAL_FUNC_10(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME, ARG9_TYPE, ARG9_NAME)	\
+	DEFINE_FUNC_RETURN_VAL_BUFF(FUNC_TYPE, FUNC_NAME)																																																								\
+	DEFINE_FUNC_RET_VAL_INIT(FUNC_TYPE, FUNC_NAME)																																																									\
+	DEFINE_RET_VAL_FUNC_INIT_9(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME, ARG9_TYPE, ARG9_NAME)	\
+	DEFINE_RET_VAL_FUNC_BODY_9(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME, ARG9_TYPE, ARG9_NAME)
 
 #define END_DEFINE_TD(FUNC_NAME)
 	
