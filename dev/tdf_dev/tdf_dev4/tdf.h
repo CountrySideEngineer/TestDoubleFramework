@@ -89,18 +89,18 @@
 		}																	\
 	}
 
-#define DEFINE_FUNC_RET_VAL_INIT_BY_VAL(FUNC_TYPE, FUNC_NAME, INIT_VAL)	\
-	void FUNC_NAME##_val_init() {	\
-		for (int index1 = 0; index1 < TD_BUFF_SIZE_1; index1++) {	\
-			FUNC_NAME##_return_value[index1] = 0;	\
-		}\
+#define DEFINE_FUNC_RET_VAL_INIT_BY_VAL(FUNC_TYPE, FUNC_NAME, INIT_VAL)		\
+	void FUNC_NAME##_val_init() {											\
+		for (int index1 = 0; index1 < TD_BUFF_SIZE_1; index1++) {			\
+			FUNC_NAME##_return_value[index1] = 0;							\
+		}																	\
 	}
 
 #define DEFINE_FUNC_RET_VAL_INIT(FUNC_TYPE, FUNC_NAME)	\
 	DEFINE_FUNC_RET_VAL_INIT_BY_VAL(FUNC_TYPE, FUNC_NAME, 0)
 
 #define DEFINE_FUNC_RET_PTR_INIT_BY_VAL(FUNC_TYPE, FUNC_NAME, INIT_VAL)	\
-	void FUNC_NAME##_val_init() {	\
+	void FUNC_NAME##_val_init() {										\
 		for (int index1 = 0; index1 < TD_BUFF_SIZE_1; index1++) {		\
 			for (int index2 = 0; index2 < TD_BUFF_SIZE_2; index2++) {	\
 				FUNC_NAME##_return_val[index1][index2] = INIT_VAL;		\
@@ -369,6 +369,54 @@
 		FUNC_NAME##_##ARG4_NAME##_init();					\
 		FUNC_NAME##_##ARG5_NAME##_init();					\
 		FUNC_NAME##_##ARG6_NAME##_init();					\
+	}
+
+#define DEFINE_RET_VAL_FUNC_INIT_8(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME)	\
+	void FUNC_NAME##_init()									\
+	{														\
+		FUNC_NAME##_called_count = 0;						\
+		FUNC_NAME##_val_init();								\
+		FUNC_NAME##_##ARG0_NAME##_init();					\
+		FUNC_NAME##_##ARG1_NAME##_init();					\
+		FUNC_NAME##_##ARG2_NAME##_init();					\
+		FUNC_NAME##_##ARG3_NAME##_init();					\
+		FUNC_NAME##_##ARG4_NAME##_init();					\
+		FUNC_NAME##_##ARG5_NAME##_init();					\
+		FUNC_NAME##_##ARG6_NAME##_init();					\
+		FUNC_NAME##_##ARG7_NAME##_init();					\
+	}
+
+#define DEFINE_RET_VAL_FUNC_INIT_9(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME)	\
+	void FUNC_NAME##_init()									\
+	{														\
+		FUNC_NAME##_called_count = 0;						\
+		FUNC_NAME##_val_init();								\
+		FUNC_NAME##_##ARG0_NAME##_init();					\
+		FUNC_NAME##_##ARG1_NAME##_init();					\
+		FUNC_NAME##_##ARG2_NAME##_init();					\
+		FUNC_NAME##_##ARG3_NAME##_init();					\
+		FUNC_NAME##_##ARG4_NAME##_init();					\
+		FUNC_NAME##_##ARG5_NAME##_init();					\
+		FUNC_NAME##_##ARG6_NAME##_init();					\
+		FUNC_NAME##_##ARG7_NAME##_init();					\
+		FUNC_NAME##_##ARG8_NAME##_init();					\
+	}
+
+#define DEFINE_RET_VAL_FUNC_INIT_10(FUNC_TYPE, FUNC_NAME, ARG0_TYPE, ARG0_NAME, ARG1_TYPE, ARG1_NAME, ARG2_TYPE, ARG2_NAME, ARG3_TYPE, ARG3_NAME, ARG4_TYPE, ARG4_NAME, ARG5_TYPE, ARG5_NAME, ARG6_TYPE, ARG6_NAME, ARG7_TYPE, ARG7_NAME, ARG8_TYPE, ARG8_NAME, ARG9_TYPE, ARG9_NAME)	\
+	void FUNC_NAME##_init()									\
+	{														\
+		FUNC_NAME##_called_count = 0;						\
+		FUNC_NAME##_val_init();								\
+		FUNC_NAME##_##ARG0_NAME##_init();					\
+		FUNC_NAME##_##ARG1_NAME##_init();					\
+		FUNC_NAME##_##ARG2_NAME##_init();					\
+		FUNC_NAME##_##ARG3_NAME##_init();					\
+		FUNC_NAME##_##ARG4_NAME##_init();					\
+		FUNC_NAME##_##ARG5_NAME##_init();					\
+		FUNC_NAME##_##ARG6_NAME##_init();					\
+		FUNC_NAME##_##ARG7_NAME##_init();					\
+		FUNC_NAME##_##ARG8_NAME##_init();					\
+		FUNC_NAME##_##ARG9_NAME##_init();					\
 	}
 
 #define DEFINE_VOID_FUNC_BODY_0(FUNC_NAME)	\
