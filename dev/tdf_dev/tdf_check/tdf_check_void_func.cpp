@@ -192,3 +192,107 @@ void CheckVoidFunc2ValArg(void)
 		ARG_VAL(VoidFunc2ValArg, input2, 1),
 		0);
 }
+
+/*
+	Define test double of "void FuncA(int input1, int input2)"
+	using macros of test double framework defined in "tdf.h"
+	header file.
+ */
+BEGIN_DEF_TD(VoidFunc3ValArg)
+REG_VAL_ARG(VoidFunc3ValArg, int, input1)
+REG_VAL_ARG(VoidFunc3ValArg, int, input2)
+REG_VAL_ARG(VoidFunc3ValArg, int, input3)
+DEF_VOID_FUNC(VoidFunc3ValArg, int, input1, int, input2, int, input3)
+END_DEF_TD(VoidFunc3ValArg)
+
+void CheckVoidFunc3ValArg(void)
+{
+	_tprintf(_T("%s Start!\n"), GET_NAME(VoidFunc3ValArg));
+
+	TD_INIT(VoidFunc3ValArg);
+
+	int input1 = 1;
+	int input2 = 2;
+	int input3 = 3;
+	VoidFunc3ValArg(input1, input2, input3);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc3ValArg)),
+		CALLED_COUNT(VoidFunc3ValArg),
+		1);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input1, 0)),
+		ARG_VAL(VoidFunc3ValArg, input1, 0),
+		1);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input2, 0)),
+		ARG_VAL(VoidFunc3ValArg, input2, 0),
+		2);
+
+	input1 = 11;
+	input2 = 22;
+	input3 = 33;
+	VoidFunc3ValArg(input1, input2, input3);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc3ValArg)),
+		CALLED_COUNT(VoidFunc3ValArg),
+		2);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input1, 1)),
+		ARG_VAL(VoidFunc3ValArg, input1, 1),
+		11);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input2, 1)),
+		ARG_VAL(VoidFunc3ValArg, input2, 1),
+		22);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input3, 1)),
+		ARG_VAL(VoidFunc3ValArg, input3, 1),
+		33);
+
+	TD_INIT(VoidFunc3ValArg);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc3ValArg)),
+		CALLED_COUNT(VoidFunc3ValArg),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input1, 0)),
+		ARG_VAL(VoidFunc3ValArg, input1, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input2, 0)),
+		ARG_VAL(VoidFunc3ValArg, input2, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input3, 0)),
+		ARG_VAL(VoidFunc3ValArg, input3, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input1, 1)),
+		ARG_VAL(VoidFunc3ValArg, input1, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input2, 1)),
+		ARG_VAL(VoidFunc3ValArg, input2, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc3ValArg, input3, 1)),
+		ARG_VAL(VoidFunc3ValArg, input3, 1),
+		0);
+}
