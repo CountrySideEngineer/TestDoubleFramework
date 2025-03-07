@@ -6,6 +6,7 @@ void CheckVoidFunc1ValArg(void);
 void CheckVoidFunc2ValArg(void);
 void CheckVoidFunc3ValArg(void);
 void CheckVoidFunc4ValArg(void);
+void CheckVoidFunc5ValArg(void);
 
 int main()
 {
@@ -14,6 +15,7 @@ int main()
 	CheckVoidFunc2ValArg();
 	CheckVoidFunc3ValArg();
 	CheckVoidFunc4ValArg();
+	CheckVoidFunc5ValArg();
 
 	return 0;
 }
