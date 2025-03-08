@@ -1433,3 +1433,273 @@ void CheckVoidFunc9ValArg(void)
 		ARG_VAL(VoidFunc9ValArg, input9, 1),
 		0);
 }
+
+/*
+	Define test double of "void FuncA(int input1, int input2, int input3, int input4, int input5, int input6)"
+	using macros of test double framework defined in "tdf.h"
+	header file.
+ */
+BEGIN_DEF_TD(VoidFunc10ValArg)
+REG_VAL_ARG(VoidFunc10ValArg, int, input1)
+REG_VAL_ARG(VoidFunc10ValArg, int, input2)
+REG_VAL_ARG(VoidFunc10ValArg, int, input3)
+REG_VAL_ARG(VoidFunc10ValArg, int, input4)
+REG_VAL_ARG(VoidFunc10ValArg, int, input5)
+REG_VAL_ARG(VoidFunc10ValArg, int, input6)
+REG_VAL_ARG(VoidFunc10ValArg, int, input7)
+REG_VAL_ARG(VoidFunc10ValArg, int, input8)
+REG_VAL_ARG(VoidFunc10ValArg, int, input9)
+REG_VAL_ARG(VoidFunc10ValArg, int, input10)
+DEF_VOID_FUNC(VoidFunc10ValArg, int, input1, int, input2, int, input3, int, input4, int, input5, int, input6, int, input7, int, input8, int, input9, int, input10)
+END_DEF_TD(VoidFunc10ValArg)
+
+void CheckVoidFunc10ValArg(void)
+{
+	_tprintf(_T("%s Start!\n"), GET_NAME(VoidFunc10ValArg));
+
+	TD_INIT(VoidFunc10ValArg);
+
+	int input1 = 1;
+	int input2 = 2;
+	int input3 = 3;
+	int input4 = 4;
+	int input5 = 5;
+	int input6 = 6;
+	int input7 = 7;
+	int input8 = 8;
+	int input9 = 9;
+	int input10 = 10;
+	VoidFunc10ValArg(input1, input2, input3, input4, input5, input6, input7, input8, input9, input10);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc10ValArg)),
+		CALLED_COUNT(VoidFunc10ValArg),
+		1);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input1, 0)),
+		ARG_VAL(VoidFunc10ValArg, input1, 0),
+		1);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input2, 0)),
+		ARG_VAL(VoidFunc10ValArg, input2, 0),
+		2);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input3, 0)),
+		ARG_VAL(VoidFunc10ValArg, input3, 0),
+		3);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input4, 0)),
+		ARG_VAL(VoidFunc10ValArg, input4, 0),
+		4);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input5, 0)),
+		ARG_VAL(VoidFunc10ValArg, input5, 0),
+		5);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input6, 0)),
+		ARG_VAL(VoidFunc10ValArg, input6, 0),
+		6);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input7, 0)),
+		ARG_VAL(VoidFunc10ValArg, input7, 0),
+		7);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input8, 0)),
+		ARG_VAL(VoidFunc10ValArg, input8, 0),
+		8);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input9, 0)),
+		ARG_VAL(VoidFunc10ValArg, input9, 0),
+		9);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input10, 0)),
+		ARG_VAL(VoidFunc10ValArg, input10, 0),
+		10);
+
+	input1 = 11;
+	input2 = 22;
+	input3 = 33;
+	input4 = 44;
+	input5 = 55;
+	input6 = 66;
+	input7 = 77;
+	input8 = 88;
+	input9 = 99;
+	input10 = 111;
+	VoidFunc10ValArg(input1, input2, input3, input4, input5, input6, input7, input8, input9, input10);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc10ValArg)),
+		CALLED_COUNT(VoidFunc10ValArg),
+		2);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input1, 1)),
+		ARG_VAL(VoidFunc10ValArg, input1, 1),
+		11);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input2, 1)),
+		ARG_VAL(VoidFunc10ValArg, input2, 1),
+		22);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input3, 1)),
+		ARG_VAL(VoidFunc10ValArg, input3, 1),
+		33);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input4, 1)),
+		ARG_VAL(VoidFunc10ValArg, input4, 1),
+		44);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input5, 1)),
+		ARG_VAL(VoidFunc10ValArg, input5, 1),
+		55);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input6, 1)),
+		ARG_VAL(VoidFunc10ValArg, input6, 1),
+		66);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input7, 1)),
+		ARG_VAL(VoidFunc10ValArg, input7, 1),
+		77);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input8, 1)),
+		ARG_VAL(VoidFunc10ValArg, input8, 1),
+		88);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input9, 1)),
+		ARG_VAL(VoidFunc10ValArg, input9, 1),
+		99);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input10, 1)),
+		ARG_VAL(VoidFunc10ValArg, input10, 1),
+		111);
+
+	TD_INIT(VoidFunc10ValArg);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFunc10ValArg)),
+		CALLED_COUNT(VoidFunc10ValArg),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input1, 0)),
+		ARG_VAL(VoidFunc10ValArg, input1, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input2, 0)),
+		ARG_VAL(VoidFunc10ValArg, input2, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input3, 0)),
+		ARG_VAL(VoidFunc10ValArg, input3, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input4, 0)),
+		ARG_VAL(VoidFunc10ValArg, input4, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input5, 0)),
+		ARG_VAL(VoidFunc10ValArg, input5, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input6, 0)),
+		ARG_VAL(VoidFunc10ValArg, input6, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input7, 0)),
+		ARG_VAL(VoidFunc10ValArg, input7, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input8, 0)),
+		ARG_VAL(VoidFunc10ValArg, input8, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input9, 0)),
+		ARG_VAL(VoidFunc10ValArg, input9, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input10, 0)),
+		ARG_VAL(VoidFunc10ValArg, input10, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input1, 1)),
+		ARG_VAL(VoidFunc10ValArg, input1, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input2, 1)),
+		ARG_VAL(VoidFunc10ValArg, input2, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input3, 1)),
+		ARG_VAL(VoidFunc10ValArg, input3, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input4, 1)),
+		ARG_VAL(VoidFunc10ValArg, input4, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input5, 1)),
+		ARG_VAL(VoidFunc10ValArg, input5, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input6, 1)),
+		ARG_VAL(VoidFunc10ValArg, input6, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input7, 1)),
+		ARG_VAL(VoidFunc10ValArg, input7, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input8, 1)),
+		ARG_VAL(VoidFunc10ValArg, input8, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input9, 1)),
+		ARG_VAL(VoidFunc10ValArg, input9, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(VoidFunc10ValArg, input10, 1)),
+		ARG_VAL(VoidFunc10ValArg, input10, 1),
+		0);
+}
