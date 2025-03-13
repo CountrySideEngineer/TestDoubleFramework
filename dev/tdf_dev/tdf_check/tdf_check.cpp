@@ -13,9 +13,8 @@ void CheckVoidFunc8ValArg(void);
 void CheckVoidFunc9ValArg(void);
 void CheckVoidFunc10ValArg(void);
 
-int main()
+void CheckVoidFunc()
 {
-	CheckVoidFuncNoArg();
 	CheckVoidFunc1ValArg();
 	CheckVoidFunc2ValArg();
 	CheckVoidFunc3ValArg();
@@ -26,6 +25,19 @@ int main()
 	CheckVoidFunc8ValArg();
 	CheckVoidFunc9ValArg();
 	CheckVoidFunc10ValArg();
+}
+
+void CheckValFuncNoArg(void);
+
+void CheckValFunc()
+{
+	CheckValFuncNoArg();
+}
+
+int main()
+{
+	CheckVoidFunc();
+	CheckValFunc();
 
 	return 0;
 }
