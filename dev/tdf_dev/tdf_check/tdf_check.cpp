@@ -31,12 +31,14 @@ void CheckValFuncNoArg(void);
 void CheckValFunc1ValArg(void);
 void CheckValFunc2ValArg(void);
 void CheckValFunc3ValArg(void);
+void CheckValFunc4ValArg(void);
 
 void CheckValFunc()
 {
 	CheckValFuncNoArg();
 	CheckValFunc1ValArg();
 	CheckValFunc2ValArg();
+	CheckValFunc3ValArg();
 	CheckValFunc3ValArg();
 }
 

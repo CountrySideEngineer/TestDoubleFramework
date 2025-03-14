@@ -364,3 +364,151 @@ void CheckValFunc3ValArg(void)
 		ARG_VAL(ValFunc3ValArg, input3, 1),
 		0);
 }
+
+BEGIN_DEF_TD(ValFunc4ValArg)
+REG_VAL_ARG(ValFunc4ValArg, int, input1)
+REG_VAL_ARG(ValFunc4ValArg, int, input2)
+REG_VAL_ARG(ValFunc4ValArg, int, input3)
+REG_VAL_ARG(ValFunc4ValArg, int, input4)
+DEF_VAL_FUNC(int, ValFunc4ValArg, int, input1, int, input2, int, input3, int, input4)
+END_DEF_TD(ValFunc4ValArg)
+
+void CheckValFunc4ValArg(void)
+{
+	_tprintf(_T("%s Start!\n"), GET_NAME(CheckValFunc4ValArg));
+
+	TD_INIT(ValFunc4ValArg);
+
+	SET_FUNC_RET_VAL(ValFunc4ValArg, 0, 3);
+	SET_FUNC_RET_VAL(ValFunc4ValArg, 1, 4);
+
+	int input1 = 1;
+	int input2 = 2;
+	int input3 = 3;
+	int input4 = 4;
+	int ValFunc4Arg_ret_val = ValFunc4ValArg(input1, input2, input3, input4);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(ValFunc4ValArg)),
+		CALLED_COUNT(ValFunc4ValArg),
+		1);
+	CHECK_VALUE(
+		GET_NAME(ValFunc4Arg_ret_val),
+		ValFunc4Arg_ret_val,
+		3);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input1, 0)),
+		ARG_VAL(ValFunc4ValArg, input1, 0),
+		1);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input2, 0)),
+		ARG_VAL(ValFunc4ValArg, input2, 0),
+		2);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input3, 0)),
+		ARG_VAL(ValFunc4ValArg, input3, 0),
+		3);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input4, 0)),
+		ARG_VAL(ValFunc4ValArg, input4, 0),
+		4);
+
+	input1 = 11;
+	input2 = 22;
+	input3 = 33;
+	input4 = 44;
+	ValFunc4Arg_ret_val = ValFunc4ValArg(input1, input2, input3, input4);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(ValFunc4ValArg)),
+		CALLED_COUNT(ValFunc4ValArg),
+		2);
+	CHECK_VALUE(
+		GET_NAME(ValFunc4Arg_ret_val),
+		ValFunc4Arg_ret_val,
+		4);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input1, 1)),
+		ARG_VAL(ValFunc4ValArg, input1, 1),
+		11);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input2, 1)),
+		ARG_VAL(ValFunc4ValArg, input2, 1),
+		22);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input3, 1)),
+		ARG_VAL(ValFunc4ValArg, input3, 1),
+		33);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input4, 1)),
+		ARG_VAL(ValFunc4ValArg, input4, 1),
+		44);
+
+	ValFunc3ValArg_init();;
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(ValFunc4ValArg)),
+		CALLED_COUNT(ValFunc4ValArg),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			FUNC_RET_VAL(ValFunc4ValArg, 0)),
+		FUNC_RET_VAL(ValFunc4ValArg, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			FUNC_RET_VAL(ValFunc4ValArg, 1)),
+		FUNC_RET_VAL(ValFunc4ValArg, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input1, 0)),
+		ARG_VAL(ValFunc4ValArg, input1, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input2, 0)),
+		ARG_VAL(ValFunc4ValArg, input2, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input3, 0)),
+		ARG_VAL(ValFunc4ValArg, input3, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input4, 0)),
+		ARG_VAL(ValFunc4ValArg, input4, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input1, 1)),
+		ARG_VAL(ValFunc4ValArg, input1, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input2, 1)),
+		ARG_VAL(ValFunc4ValArg, input2, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input3, 1)),
+		ARG_VAL(ValFunc4ValArg, input3, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			ARG_VAL(ValFunc4ValArg, input4, 1)),
+		ARG_VAL(ValFunc4ValArg, input4, 1),
+		0);
+}
