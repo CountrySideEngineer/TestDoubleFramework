@@ -35,6 +35,9 @@ void CheckValFunc4ValArg(void);
 void CheckValFunc5ValArg(void);
 void CheckValFunc6ValArg(void);
 void CheckValFunc7ValArg(void);
+void CheckValFunc8ValArg(void);
+void CheckValFunc9ValArg(void);
+void CheckValFunc10ValArg(void);
 
 void CheckValFunc()
 {
@@ -46,6 +49,9 @@ void CheckValFunc()
 	CheckValFunc5ValArg();
 	CheckValFunc6ValArg();
 	CheckValFunc7ValArg();
+	CheckValFunc8ValArg();
+	CheckValFunc9ValArg();
+	CheckValFunc10ValArg();
 }
 
 int main()
