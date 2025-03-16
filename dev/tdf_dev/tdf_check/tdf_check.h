@@ -4,7 +4,7 @@
 	_T(# name)
 
 #define CHECK_VALUE(name, actual, expect)		\
-	_tprintf(_T("%48s = %8d\t"), name, actual);	\
+	_tprintf(_T("%56s = %8d\t"), name, actual);	\
 	if (expect == actual) {						\
 		_tprintf(_T("\x1b[32mOK!\x1b[39m\n"));	\
 	}											\

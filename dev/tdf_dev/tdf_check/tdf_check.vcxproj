@@ -138,6 +138,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="tdf_check.cpp" />
+    <ClCompile Include="tdf_check_ptr_arg.cpp" />
     <ClCompile Include="tdf_check_val_func.cpp" />
     <ClCompile Include="tdf_check_void_func.cpp" />
   </ItemGroup>
