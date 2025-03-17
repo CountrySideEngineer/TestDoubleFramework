@@ -55,10 +55,13 @@ void CheckValFunc()
 }
 
 void CheckVoidFuncInPtrArg(void);
+void CheckVoidFuncOutPtrArg(void);
+
 
 void CheckPtrArg()
 {
 	CheckVoidFuncInPtrArg();
+	CheckVoidFuncOutPtrArg();
 }
 
 int main()
