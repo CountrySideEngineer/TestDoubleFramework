@@ -417,4 +417,148 @@ void CheckVoidFuncInOutPtrArg(void)
 		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 1)),
 		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 1),
 		22);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 8)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 8),
+		29);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 9)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 9),
+		30);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 10)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 10),
+		31);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 11)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 11),
+		32);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 18)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 18),
+		39);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 19)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 19),
+		40);
+
+	TD_INIT(VoidFuncInOutPtrArg);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFuncInOutPtrArg)),
+		CALLED_COUNT(VoidFuncInOutPtrArg),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL_SIZE(VoidFuncInOutPtrArg, ptrInOutput1, 0)),
+		PTR_ARG_VAL_SIZE(VoidFuncInOutPtrArg, ptrInOutput1, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL_SIZE(VoidFuncInOutPtrArg, ptrInOutput1, 0)),
+		PTR_ARG_RET_VAL_SIZE(VoidFuncInOutPtrArg, ptrInOutput1, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 0)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 1)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 8)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 8),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 9)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 9),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 0)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 1)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 8)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 8),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 9)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 0, 9),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL_SIZE(VoidFuncInOutPtrArg, ptrInOutput1, 1)),
+		PTR_ARG_VAL_SIZE(VoidFuncInOutPtrArg, ptrInOutput1, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL_SIZE(VoidFuncInOutPtrArg, ptrInOutput1, 1)),
+		PTR_ARG_RET_VAL_SIZE(VoidFuncInOutPtrArg, ptrInOutput1, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 0)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 1)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 8)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 8),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 9)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 9),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 10)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 10),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 11)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 11),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 18)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 18),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 19)),
+		PTR_ARG_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 19),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 0)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 1)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 8)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 8),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 9)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 9),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 10)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 10),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 11)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 11),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 18)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 18),
+		0);
+	CHECK_VALUE(
+		GET_NAME(PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 19)),
+		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 19),
+		0);
 }
