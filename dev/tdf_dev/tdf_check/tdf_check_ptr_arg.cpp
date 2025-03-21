@@ -562,3 +562,160 @@ void CheckVoidFuncInOutPtrArg(void)
 		PTR_ARG_RET_VAL(VoidFuncInOutPtrArg, ptrInOutput1, 1, 19),
 		0);
 }
+
+BEGIN_DEF_TD(VoidFuncDoublePtrArg)
+REG_PTR_ARG_P2_OUT(VoidFuncDoublePtrArg, int, dblPointerOutput1)
+DEF_VOID_FUNC(VoidFuncDoublePtrArg, int**, dblPointerOutput1)
+END_DEF_TD(VoidFuncDoublePtrArg)
+
+void CheckVoidFuncDoublePtrArg(void)
+{
+	_tprintf(_T("%s Start!\n"), GET_NAME(CheckVoidFuncDoublePtrArg));
+
+	TD_INIT(VoidFuncDoublePtrArg);
+
+	int* ptrOutput = NULL;
+
+	for (int index = 0; index < 10; index++) {
+		SET_PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, index, (index + 1));
+	}
+	SET_PTR_ARG_RET_VAL_SIZE(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 1);
+
+	VoidFuncDoublePtrArg(&ptrOutput);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFuncDoublePtrArg)),
+		CALLED_COUNT(VoidFuncDoublePtrArg),
+		1);
+	CHECK_VALUE(
+		GET_NAME(ptrOutput[0]),
+		ptrOutput[0],
+		1);
+	CHECK_VALUE(
+		GET_NAME(ptrOutput[1]),
+		ptrOutput[1],
+		2);
+	CHECK_VALUE(
+		GET_NAME(ptrOutput[9]),
+		ptrOutput[9],
+		10);
+	CHECK_VALUE(
+		GET_NAME(ptrOutput[10]),
+		ptrOutput[10],
+		0);
+
+	for (int index = 0; index < 20; index++) {
+		SET_PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, index, 10 + (index + 1));
+	}
+	SET_PTR_ARG_RET_VAL_SIZE(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 1);
+
+	ptrOutput = NULL;
+
+	VoidFuncDoublePtrArg(&ptrOutput);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFuncDoublePtrArg)),
+		CALLED_COUNT(VoidFuncDoublePtrArg),
+		2);
+	CHECK_VALUE(
+		GET_NAME(ptrOutput[0]),
+		ptrOutput[0],
+		11);
+	CHECK_VALUE(
+		GET_NAME(ptrOutput[1]),
+		ptrOutput[1],
+		12);
+	CHECK_VALUE(
+		GET_NAME(ptrOutput[9]),
+		ptrOutput[9],
+		20);
+	CHECK_VALUE(
+		GET_NAME(ptrOutput[10]),
+		ptrOutput[10],
+		21);
+	CHECK_VALUE(
+		GET_NAME(ptrOutput[11]),
+		ptrOutput[11],
+		22);
+	CHECK_VALUE(
+		GET_NAME(ptrOutput[19]),
+		ptrOutput[19],
+		30);
+
+	TD_INIT(VoidFuncDoublePtrArg);
+
+	CHECK_VALUE(
+		GET_NAME(
+			CALLED_COUNT(VoidFuncDoublePtrArg)),
+		CALLED_COUNT(VoidFuncDoublePtrArg),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 0)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 1)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 8)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 8),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 9)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 9),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 10)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 0, 10),
+		0);
+
+
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 0)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 0),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 1)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 1),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 8)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 8),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 9)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 9),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 10)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 10),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 11)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 11),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 18)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 18),
+		0);
+	CHECK_VALUE(
+		GET_NAME(
+			PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 19)),
+		PTR_ARG_RET_VAL(VoidFuncDoublePtrArg, dblPointerOutput1, 1, 19),
+		0);
+}
